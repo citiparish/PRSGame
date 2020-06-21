@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <title>Lets play game</title>
+    <head></head>
+    <body>
+        <p> This is a game</p>
+        <p id = "demo" ></p>
+        <p id = "demo1" ></p>
+        <p id = "demo2" ></p>
+        <p id = "demo3" ></p>
+        <script>
+            const playSelection = ["rock", "scissors", "paper"];
+
+            function computerSelection(){
+                return playSelection.math.random();
+            }
+            function playerSelection(){
+                let playerInput = prompt("Choose any of there: rock, scissors or paper");
+                return playerInput;
+            }
+           // function computerSelection(){
+             //   return playSelection.random();
+            //}
+            function playRound(){
+                playerSelection();
+                computerSelection();
+                if((playerSelection === "paper" && computerSelection === "rock") || 
+                  (playerSelection === "scissors" && computerSelection === "paper") ||
+                  (playerSelection === "rock" && computerSelection === "scissors"))
+                  {
+                    document.getElementById("demo").innerHTML = "You Win!";
+                  }
+                else if((computerSelection === "paper" && playerSelection === "rock") ||
+                       (computerSelection === "scissors" && playerSelection === "paper")
+                       (computerSelection === "rock" && playerSelection === "scissors")) 
+                       {
+                           document.getElementById("demo1").innerHTML = "You lose!";
+                       }
+                else if((playerSelection === "paper" && computerSelection === "paper") || 
+                        (playerSelection === "scissors" && computerSelection === "scissors") ||
+                        (playerSelection === "rock" && computerSelection === "rocks"))
+                        {
+                            document.getElementById("demo2").innerHTML = "it's a tie!";
+                        }
+                        else{
+                            document.getElementById("demo3").innerHTML = "please choose: paper, rock or scissors";
+                        }
+            }
+            playRound(); 
+        </script>
+
+    </body>
